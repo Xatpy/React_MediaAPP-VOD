@@ -1,0 +1,32 @@
+body {
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  background-color: rgba(160, 160, 160, 0.5);
+  font-family: 'Roboto', sans-serif;
+}
+.header {
+  background-color: grey;
+}
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 90%;
+  color: #333;
+}
+.slick-slide img {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
+
+.filmTitle {
+  margin-left: 2%;
+}
+
+.player {
+  width: auto;
+  height: auto;
+}
