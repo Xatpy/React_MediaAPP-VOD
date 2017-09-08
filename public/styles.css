@@ -7,12 +7,56 @@ body {
 }
 .header {
   background-color: grey;
+   overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
 }
+.header a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav > ul > li {
+    float: left;
+    margin: 20px;
+    margin-left: 50px;
+}
+
+nav > ul > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+.navRight {
+  font-size: larger;
+  float:right;
+  margin-right: 50px;
+  text-decoration: underline;
+  color: red;
+}
+
 .container {
   margin: 0 auto;
   padding: 40px;
   max-width: 90%;
   color: #333;
+  margin-top: 100px;
 }
 .slick-slide img {
   margin-left: auto;
@@ -29,4 +73,6 @@ body {
 .player {
   width: auto;
   height: auto;
+  margin-top: 125px;
+  text-align: center;
 }

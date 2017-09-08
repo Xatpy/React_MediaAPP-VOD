@@ -6,7 +6,6 @@ class History extends Component {
     console.log(this.props);
     return (
       <div>
-          <span>{this.props.match.params.value}</span>
         <h2>History</h2>
       </div>
     );
