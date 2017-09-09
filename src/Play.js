@@ -20,21 +20,47 @@ class Play extends Component {
   		return ret;
   	}
 
-	render () {
+    getMovie(idMovie) {
+      var ret = null;
+      const entries = window.entries;
+      if (entries !== undefined) {
+        var obj = entries.find(x => x.id === idMovie);
+        if (obj !== undefined) {
+          return obj;
+        }
+      }
+      return ret;
+    }
+
+	 render () {
       //Mocking url to test
     	var url = "http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4";
       var id = (this.props.match.params.value);
+      var name = null;
 
     	if (id !== undefined) {
-    		url = this.getUrl(id); 
+        const objMovie = this.getMovie(id);
+    		url = objMovie.contents[0].url;
+        name = objMovie.title;
     	}
 
       const divStyle = {
         width: 'auto !important',
-        height: '100px',
-        color:'red',
         display: 'inline-block'
       };
+
+      debugger
+      var register = {
+        "name" : name,
+        "date" : new Date()
+      };
+      var registers = [];
+      var storedHistoricFilms = JSON.parse(localStorage.getItem("movies"));
+      if (storedHistoricFilms !== null) {
+        registers = storedHistoricFilms;
+      }
+      registers.push(register);
+      localStorage.setItem("movies", JSON.stringify(registers));
     	
     	return ( 
     		<div className="player">

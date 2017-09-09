@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
 
 class History extends Component {
-  render() {
-    console.log("aaa");
-    console.log(this.props);
-    return (
-      <div>
-        <h2>History</h2>
-      </div>
-    );
+
+  	render() {
+  		let registersMovies = JSON.parse(localStorage.getItem("movies"));
+  		const showHistory = (registersMovies !== null) && (registersMovies.length > 0);
+  		if (showHistory) {
+  			registersMovies = registersMovies.filter(m => m.name !== null); // Safety check
+  		}
+  		debugger
+	    return (
+	      <div className="container history">
+	        <h2>History</h2>
+	        {showHistory ? (
+		        <div className="listHistory">
+		        	<ul>
+			        {registersMovies.map((film, index) => (
+			            <li data-index={index} key={index}>
+			              <span className="filmTitle">{film.name} :: {film.date}</span>
+			            </li>
+		          	))}
+		          	</ul>
+		        </div>
+		        ) : (
+		        <div>
+		        	<span>No history registered.</span>
+		        </div>
+	        )}
+	      </div>
+	    );
   }
 }
 

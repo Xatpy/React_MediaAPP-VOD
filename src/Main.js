@@ -10,9 +10,9 @@ class Main extends Component {
     console.log(this.props);
     return (
 	  	<Switch>
-	      <Route exact path='/' component={SlickCarousel}/>
-	      <Route path='/history' component={History}/>
-	      <Route path="/play/:value" component={Play} />
+	      	<Route exact path='/' component={SlickCarousel}/>
+	      	<Route path='/history' component={History}/>
+	      	<Route path="/play/:value" component={Play} />
 	    </Switch>
     );
   }

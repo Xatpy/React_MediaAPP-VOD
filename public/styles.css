@@ -58,6 +58,10 @@ nav > ul > li a {
   color: #333;
   margin-top: 100px;
 }
+
+.container.history{
+  margin-top: 80px;
+}
 .slick-slide img {
   margin-left: auto;
   margin-right: auto;
