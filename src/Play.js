@@ -49,10 +49,12 @@ class Play extends Component {
         display: 'inline-block'
       };
 
-      debugger
+      var date = new Date();
+      const dateFormatted = date.toDateString() + " :: " + date.toTimeString();
+
       var register = {
         "name" : name,
-        "date" : new Date()
+        "date" : dateFormatted
       };
       var registers = [];
       var storedHistoricFilms = JSON.parse(localStorage.getItem("movies"));
