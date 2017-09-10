@@ -2,14 +2,14 @@
 Media App VOD (Video On-Demand). Three main features:
 - Show catalog of movies/films in a carousel.
 - Play videos
-- check history of played movies (using local storage)
+- Check history of played movies (using local storage)
 
 # Technology description
-Using React libraries:
+Using React.js:
 - create-react as base project template.
 - react-router for SPA.
 - [react-slick](https://github.com/akiran/react-slick) for carousel
-- react-player for Play videos.
+- [react-player](https://www.npmjs.com/package/react-player) for Play videos.
 
 # Instructions
  - Clear local storage:
@@ -28,6 +28,5 @@ Using React libraries:
 
 # TO-DOs
   - Click on `enter` to select video.
-  - Log in / users system.
+  - Log in / users system (with Firebase).
   - Tests
-  - Mobile
