@@ -47,8 +47,12 @@ nav > ul > li a {
   font-size: larger;
   float:right;
   margin-right: 50px;
-  text-decoration: underline;
   color: red;
+}
+
+.historyLink {
+  text-decoration: underline;
+  font-size: medium;
 }
 
 .container {
