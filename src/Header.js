@@ -8,7 +8,7 @@ class App extends Component {
 	    <nav>
 	      <ul>
 	        <li><Link to='/'>Home</Link></li>
-	        <li className="navRight"><Link to='/history'>History</Link></li>
+	        <li className="navRight"><Link to='/history'><span className="historyLink">History</span></Link></li>
 	      </ul>
 	    </nav>
 	  </header>
