@@ -19,6 +19,8 @@ class Play extends React.Component<void, Props, void>  {
       return ret;
     }
 
+    // Using local storage to work with the history feature.
+    // TODO: Save this data for user in server database
     registerHistoryLocalStorage(name) {
       var date = new Date();
       const dateFormatted = date.toDateString() + " :: " + date.toTimeString();
@@ -37,7 +39,7 @@ class Play extends React.Component<void, Props, void>  {
     }
 
 	 render () {
-      //Mocking url to test
+      //Mocking url to test by default
     	var url = "http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4";
       var id = (this.props.match.params.value);
       var name = null;
@@ -50,14 +52,14 @@ class Play extends React.Component<void, Props, void>  {
         } 
     	}
 
+      if (name !== null) {
+        this.registerHistoryLocalStorage(name);
+      }
+
       const divStyle = {
         width: 'auto !important',
         display: 'inline-block'
       };
-
-      if (name !== null) {
-        this.registerHistoryLocalStorage(name);
-      }
     	
     	return ( 
     		<div className="player">

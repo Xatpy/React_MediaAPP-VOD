@@ -3,11 +3,9 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
 class SlickCarousel extends Component {
-
   constructor(props) {
     super(props);
-    this.state = { data: [
-    ] };
+    this.state = { data: [] };
   }
 
   componentDidMount() {
@@ -19,7 +17,10 @@ class SlickCarousel extends Component {
     var _this = this;
     this.loadJSON(url,
         function(data) {
+            // Using state to sync carousel
             _this.setState({data: data.entries})
+            //Using window object to have the data as global.
+            // TODO: Get a general manager to handle this kind of data
             window.entries = data.entries;
           },
           function(xhr) { 
@@ -28,6 +29,8 @@ class SlickCarousel extends Component {
       );
   };
 
+  // This function could be moved to some utility library if the app
+  // continues growing
   loadJSON(path, success, error) {
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function()
